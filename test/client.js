@@ -1,17 +1,26 @@
 const wru = require('wru'),
     nock = require('nock'),
-    DiscogsClient = require('../lib/client.js');
+    DiscogsClient = require('../lib/client.js'),
+    DiscogsDatabase = require('../lib/database.js'),
+    DiscogsMarketplace = require('../lib/marketplace.js'),
+    DiscogsUser = require('../lib/user.js');
+    
 
 const tests = module.exports = [
     {
-        name: 'DiscogsClient: Test instance',
-        test: () => {
-            wru.assert('Instance of DiscogsClient', (new DiscogsClient() instanceof DiscogsClient));
-        }
-    }, {
         name: 'DiscogsClient: Test authenticated()',
         test: () => {
             wru.assert('Authentication level 1 === false', (new DiscogsClient().authenticated(1) === false));
+        }
+    }, {
+        name: 'DiscogsClient: Test sections',
+        test: () => {
+            let client = new DiscogsClient();
+            wru.assert('client.database() returns DiscogsDatabase', (client.database() instanceof DiscogsDatabase));
+            wru.assert('client.marketplace() returns DiscogsMarketplace', (client.marketplace() instanceof DiscogsMarketplace));
+            let user = client.user();
+            wru.assert('client.user() returns DiscogsUser', (user instanceof DiscogsUser));
+            wru.assert('Subsequent client.user() calls return the same DiscogsUser instance', (client.user() === user));
         }
     }, {
         name: 'DiscogsClient: Test get()',
