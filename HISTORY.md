@@ -1,3 +1,10 @@
+1.1.0 / 2017-01-
+==================
+  * The great ES6 update with lots of restructuring under the hood
+  * Previous "private" properties and methods prefixed with an _ are now really private and can no longer be accessed
+  * Deprecated `require('disconnect').util`, use `require('disconnect').Util` instead
+  * Bugfix in `Queue` concerning requests not being added to the request stack and thus were never executed
+
 1.0.2 / 2016-11-10
 ==================
   * Added `collection().getReleaseInstances()`

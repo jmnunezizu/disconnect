@@ -1,3 +1,5 @@
+'use strict';
+
 const wru = require('wru'),
     files = ['error', 'queue', 'util', 'client'];
 let tests = [];

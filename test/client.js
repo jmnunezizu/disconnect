@@ -1,3 +1,5 @@
+'use strict';
+
 const wru = require('wru'),
     nock = require('nock'),
     DiscogsClient = require('../lib/client.js'),
