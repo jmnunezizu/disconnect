@@ -1,9 +1,13 @@
-1.1.0 / 2017-01-
+1.2.0 / 2017-03-
 ==================
   * The great ES6 update with lots of restructuring under the hood
   * Previous "private" properties and methods prefixed with an _ are now really private and can no longer be accessed
   * Deprecated `require('disconnect').util`, use `require('disconnect').Util` instead
   * Bugfix in `Queue` concerning requests not being added to the request stack and thus were never executed
+
+1.1.0 / 2017-02-23
+==================
+  * Implemented new Discogs rate limiting headers. The rate limit param in a callback now looks like: `{ limit: 240, used: 1, remaining: 239 }`
 
 1.0.2 / 2016-11-10
 ==================
