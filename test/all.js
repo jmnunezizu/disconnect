@@ -1,7 +1,7 @@
 'use strict';
 
 const wru = require('wru'),
-    files = ['error', 'queue', 'util', 'client'];
+    files = ['error', 'queue', 'util', 'client', 'database'];
 let tests = [];
 
 files.forEach((file) => {
