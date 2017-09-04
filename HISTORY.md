@@ -1,11 +1,16 @@
-1.3.0 / 2017-07-
+1.3.0 / 2017-
 ==================
   * The great ES6 update with lots of restructuring under the hood
   * Previous "private" properties and methods prefixed with an _ are now really private and can no longer be accessed
   * Deprecated `require('disconnect').util`, use `require('disconnect').Util` instead
   * Bugfix in `Queue` concerning requests not being added to the request stack and thus were never executed
 
+1.2.1 / 2017-09-01
+==================
+  * Fixed bug in image downloads (and any url different from `api.discogs.com`)
+
 1.2.0 / 2017-06-07
+==================
   * Query parameter is now optional for `database.search()`
   * Implemented different request limits for authenticated and non-authenticated clients
 
